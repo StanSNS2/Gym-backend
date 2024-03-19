@@ -3,6 +3,7 @@ package gym.backend.controller;
 import gym.backend.entity.UserEntity;
 import gym.backend.repository.UserEntityRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +15,9 @@ import java.util.List;
 @CrossOrigin(origins = "${my.url}")
 @RequiredArgsConstructor
 public class UserEntityController {
+
+    @Value("${my.url}")
+    private String testURL;
 
     private final UserEntityRepository userEntityRepository;
 
@@ -27,4 +31,8 @@ public class UserEntityController {
         return userEntityRepository.findAll();
     }
 
+    @GetMapping("test")
+    public String testUrl() {
+        return testURL;
+    }
 }
