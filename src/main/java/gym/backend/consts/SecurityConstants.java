@@ -1,5 +1,5 @@
 package gym.backend.consts;
 
 public class SecurityConstants {
-    public static final String FRONTEND_BASE_URL ="http://localhost:3000";
+    public static final String FRONTEND_BASE_URL ="https://gym-g99y.onrender.com";
 }
