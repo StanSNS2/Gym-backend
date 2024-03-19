@@ -12,6 +12,7 @@ import java.util.List;
 
 import static gym.backend.consts.SecurityConstants.FRONTEND_BASE_URL;
 
+
 @RestController
 @CrossOrigin(FRONTEND_BASE_URL)
 @RequiredArgsConstructor
@@ -19,12 +20,12 @@ public class UserEntityController {
 
     private final UserEntityRepository userEntityRepository;
 
-    @PostMapping("addUser")
+    @PostMapping("/addUser")
     public String addUser() {
         return "User added.";
     }
 
-    @GetMapping("getAllUsers")
+    @GetMapping("/getAllUsers")
     public List<UserEntity> getAllUsers() {
         return userEntityRepository.findAll();
     }
